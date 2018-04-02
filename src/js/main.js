@@ -8,13 +8,22 @@ let $overlay = $("#overlay");
 let overlay = false;
 let $dropdownButton = $header.find(".dropdown-home");
 let $dropdownMenu = $dropdownButton.find(".dropdown-menu1");
+let $facts = $("#facts");
+let $factsItems = $(".stats-item");
+let $factsItemsNumber = $factsItems.find(".stats-item-number");
+let factsItemsNumber = [true, true, true, true];
+let stats = [76, 153, 290, 81];
+let cnt = [];
+console.log($factsItemsNumber[1].innerHTML);
+// Scroll
 
-//	Navigatoin Scroll
 
 function scroll(){
 	
 	var ypos = window.pageYOffset;
 	
+	// Navbar scroll animation 
+
 	if( ypos > 100 ) {
 		
 		$header.addClass("navbar-transition");
@@ -24,10 +33,39 @@ function scroll(){
 		
 		$header.removeClass("navbar-transition")
 	}
+
+	// Facts scroll animation
+/*	for( var i = 0; i < $factsItems.length; i++) {
+
+		if( ypos > $factsItems.eq(i).position().top - 790 ) {
+			
+			if( factsItemsNumber[i] ) {
+				factsItemsNumber[i] = !factsItemsNumber[i];
+				let j = i;
+				cnt[j] = 0;
+				setInterval( function(){
+					if(cnt[j] <= stats[j]) {
+						cnt[j]++;
+						$factsItemsNumber[j].innerHTML = cnt[j];
+					}
+				}, 25);
+			}
+
+		} 
+	}
+	
+*/	
 }
+
 window.addEventListener("scroll", scroll);
 
-
+/*function factsAnimation() {
+	
+	setInterval( () => {
+		$factsItems.
+	}, 1000);
+ }
+*/
 //	Mobile navigation 
 
 
@@ -60,7 +98,6 @@ $(window).resize(navAnimation);
 // Mobile button event
 
 $mobileButton.on("click", function(){
-			console.log("mobileNav");
 			mobileNav = !mobileNav;
 			
 			if(mobileNav) {
@@ -90,3 +127,4 @@ $dropdownButton.click( ()=>{
 $overlay.click( ()=> {
 					$mobileButton.click();
 				});		
+
