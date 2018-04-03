@@ -128,3 +128,23 @@ $overlay.click( ()=> {
 					$mobileButton.click();
 				});		
 
+// Portofolio effects
+	
+	// Portofolio box animation
+
+	/*
+	let $portofolio = $("#portofolio");
+	let $portofolioBox = $portofolio.find(".portofolio-box-1");
+	let $portofolioBoxText = $portofolioBox.find(".portofolio-box-text");
+
+	$portofolioBox.on("hover click", portofolioBoxAnimation);
+
+	function portofolioBoxAnimation() {
+		$(this).children().eq(1).slideUp(200);
+	}
+*/
+
+$('.counter').counterUp({
+    delay: 14,
+    time: 1000
+});
