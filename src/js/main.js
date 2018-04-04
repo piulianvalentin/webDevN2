@@ -1,20 +1,20 @@
 let $header = $("header");
+let $navItem = $header.find(".nav-item");
 let $navbar = $header.find(".navbar-nav");
 let $navbarNav = $header.find("#navbarNav");
 let $body = $("body");
+let $homeButton = $body.find("#home-button");
 let $mobileButton = $header.find(".navbar-toggler");
 let mobileNav = false;
 let $overlay = $("#overlay");
 let overlay = false;
 let $dropdownButton = $header.find(".dropdown-home");
 let $dropdownMenu = $dropdownButton.find(".dropdown-menu1");
-let $facts = $("#facts");
-let $factsItems = $(".stats-item");
-let $factsItemsNumber = $factsItems.find(".stats-item-number");
-let factsItemsNumber = [true, true, true, true];
-let stats = [76, 153, 290, 81];
-let cnt = [];
-console.log($factsItemsNumber[1].innerHTML);
+
+$navItem.splice( $.inArray($navItem[5], $navItem) ,1 );
+
+ 
+
 // Scroll
 
 
@@ -24,62 +24,48 @@ function scroll(){
 	
 	// Navbar scroll animation 
 
-	if( ypos > 100 ) {
-		
+	if( ypos > 100 ) {		
 		$header.addClass("navbar-transition");
-	}
-	
-	else {
-		
+	}	
+	else {		
 		$header.removeClass("navbar-transition")
 	}
 
-	// Facts scroll animation
-/*	for( var i = 0; i < $factsItems.length; i++) {
+	// HOME BUTTON 
 
-		if( ypos > $factsItems.eq(i).position().top - 790 ) {
-			
-			if( factsItemsNumber[i] ) {
-				factsItemsNumber[i] = !factsItemsNumber[i];
-				let j = i;
-				cnt[j] = 0;
-				setInterval( function(){
-					if(cnt[j] <= stats[j]) {
-						cnt[j]++;
-						$factsItemsNumber[j].innerHTML = cnt[j];
-					}
-				}, 25);
-			}
-
-		} 
+	if( ypos > 1000) {
+		$homeButton.fadeIn(500);
 	}
-	
-*/	
+	else {
+		$homeButton.fadeOut(500);
+	}
 }
-
+scroll();
 window.addEventListener("scroll", scroll);
 
-/*function factsAnimation() {
-	
-	setInterval( () => {
-		$factsItems.
-	}, 1000);
- }
-*/
 //	Mobile navigation 
-
 
 function navAnimation(){
 	
 	if( $body.width() < 992 ) {
-
+		$navItem.off();
+		smoothScroll();
+		$navItem.click( ()=> {
+			$mobileButton.click();
+		});
+		$dropdownButton.off();
+		$dropdownButton.click(dropdownMenuAnimationClick);
 		$body.append($navbar);
 		$navbar.addClass("mobile-nav");
 
 	}
 
 	else {
-		
+		$navItem.off();
+		smoothScroll();
+		$dropdownMenu.css({"display": "none"});
+		$dropdownButton.off();
+		$dropdownButton.hover(dropdownMenuAnimationHover);
 		mobileNav = false;
 		$navbar.removeClass("mobile-nav");
 		$navbar.removeClass("mobile-nav-animation-in");
@@ -91,60 +77,95 @@ function navAnimation(){
 }
 
 navAnimation();
-
-
 $(window).resize(navAnimation);
 
-// Mobile button event
+// Mobile button - Link buttons event
 
-$mobileButton.on("click", function(){
-			mobileNav = !mobileNav;
+$mobileButton.on("click", navigationClickMobileButtonAnimations);
+
+ 
+function navigationClickMobileButtonAnimations() {
+	mobileNav = !mobileNav;
 			
-			if(mobileNav) {
-				
-				$mobileButton.addClass("navbar-toggler-animation");
-				$body.css({"overflow" : "hidden"});
-				$navbar.removeClass("mobile-nav-animation-out");
-				$navbar.addClass("mobile-nav-animation-in");
-				$overlay.addClass("overlay");
+	if(mobileNav) {
+		
+		$mobileButton.addClass("navbar-toggler-animation");
+		$body.css({"overflow" : "hidden"});
+		$navbar.removeClass("mobile-nav-animation-out");
+		$navbar.addClass("mobile-nav-animation-in");
+		$overlay.addClass("overlay");
 
-			}
-			else {
+	}
+	else {
 
-				$mobileButton.removeClass("navbar-toggler-animation");
-				$body.css({"overflow" : "scroll"});
-				$overlay.removeClass("overlay");
-				$navbar.removeClass("mobile-nav-animation-in");
-				$navbar.addClass("mobile-nav-animation-out");	
-			}
+		$mobileButton.removeClass("navbar-toggler-animation");
+		$body.css({"overflow" : "scroll"});
+		$overlay.removeClass("overlay");
+		$navbar.removeClass("mobile-nav-animation-in");
+		$navbar.addClass("mobile-nav-animation-out");	
+	}
+}
 
-		});
 
-$dropdownButton.click( ()=>{
-					$dropdownMenu.toggle(300);
-				});		
+// Dropdown animation
+
+function dropdownMenuAnimationHover() {
+		$(this).off();
+		$dropdownMenu.slideToggle(250).css({opacity: 1})
+		.promise().then( ()=> $(this).hover(dropdownMenuAnimationHover) );	
+}
+
+
+
+function dropdownMenuAnimationClick(){
+	$(this).off();
+	$dropdownMenu.slideToggle(250).css({opacity: 1})
+		.promise().then( ()=> $(this).click(dropdownMenuAnimationClick) );	
+}	
 
 $overlay.click( ()=> {
 					$mobileButton.click();
 				});		
 
-// Portofolio effects
-	
-	// Portofolio box animation
-
-	/*
-	let $portofolio = $("#portofolio");
-	let $portofolioBox = $portofolio.find(".portofolio-box-1");
-	let $portofolioBoxText = $portofolioBox.find(".portofolio-box-text");
-
-	$portofolioBox.on("hover click", portofolioBoxAnimation);
-
-	function portofolioBoxAnimation() {
-		$(this).children().eq(1).slideUp(200);
-	}
-*/
+// Facts counter
 
 $('.counter').counterUp({
     delay: 14,
     time: 1000
 });
+
+function initMap() {
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 44.389822, lng: 26.093287},
+          zoom: 17
+        });
+      }
+
+// Smooth scroll
+
+var $navLink = $navItem.find(".nav-link");
+$navLink.click(function(e){
+	e.preventDefault();
+});
+var $navLinkDropdown = $dropdownButton.find(".nav-link");
+$navLinkDropdown.click(function(e){
+	e.preventDefault();
+});
+
+function smoothScroll() {
+	$navItem.click(function(){
+		$("body, html").animate({
+			scrollTop: $($(this).children().attr("href")).offset().top
+		}, 800);
+	});
+	$homeButton.click(function(){
+		$("body, html").animate({
+			scrollTop: 0
+		}, 800);
+	});
+}
+
+smoothScroll();
+
+

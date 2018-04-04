@@ -3,6 +3,7 @@
 $green : #2dc997;
 $grey : rgba(52, 59, 64, 0.9);
 $light-grey : #F7F7F7;
+
 .navbar-toggler-animation.navbar-toggler-animation div:nth-child(1) {
 	margin-bottom: -7px;
 	transform: rotate(45deg);
@@ -66,6 +67,25 @@ $light-grey : #F7F7F7;
 	padding-top: 0px;
 
 }
+#home-button {
+	display: none;
+	position: fixed;
+	right: 20px;
+	bottom: 50px;
+	z-index: 110;
+	color: black;
+	font-size: 35px;
+	padding: 3px 5px;
+	background-color: rgba(41, 58, 47, 0.5);
+	color: rgba(255, 255, 255, 0.9);
+	border-radius: 4px;
+	transition: all 200ms ease-in-out;
+	&:hover {
+		background-color: rgba(82, 116, 94, 0.5);
+		box-shadow: 0px 1px 7px 0px rgb(164, 232, 188);
+	}
+
+}
 
 body {
 	min-width: 320px;
@@ -108,7 +128,6 @@ header {
 		}
 
 		li.nav-item {
-
 			margin-top: 10%;
 			color: white !important;
 			padding: 4px;
@@ -140,16 +159,10 @@ header {
 	}
 	.dropdown-home {
 		position: relative;
-		overflow: hidden;
-		&:hover {
-			overflow: visible;
-			.dropdown-menu1 {
-			opacity: 1;
-			}
-		}
 		.dropdown-menu1 {
 			opacity: 0;
-			transition: all 0.2s ease-in;
+			transition: opacity 250ms ease-in-out;
+			display: none;
 			background: white;
 			position: absolute;
 			margin-top: 4px;
@@ -180,8 +193,10 @@ header {
 }
 
 section#home {
+	height: 100vh;
 	min-height: 909px;
 	div.pimg {
+		height: 100vh;
 		min-height: 909px;
 		background-image:url('../images/homepage.jpg');
 		position: relative;
@@ -235,7 +250,7 @@ section#home {
 }
 
 section#about {
-	padding: 80px 30px 0px 30px;
+	padding: 150px 30px 0px 30px;
 	div.about-image {
 		-webkit-animation-duration: 1000ms;
 		-webkit-animation-delay: 200ms;
@@ -243,7 +258,7 @@ section#about {
 		padding-bottom: 30px;
 		img {
 			padding-left:0px;
-			width: 700px;;
+			width: 100%;
 			height: auto;
 		}
 	}
@@ -334,6 +349,7 @@ section#facts {
 }
 
 section#services {
+	padding-top: 150px;
 	padding-bottom: 80px;
 	text-align: center;
 	h1 {
@@ -438,6 +454,7 @@ section#call-to-action {
 }
 
 section#portofolio {
+	padding-top: 80px;
 	padding-bottom: 50px;
 	text-align: center;
 	background-color: #F7F7F7;
@@ -538,7 +555,14 @@ section#portofolio {
 }
 
 section#contact {
+	padding-top: 100px;
 	text-align: center;
+	padding-bottom: 70px;
+	#map {
+		margin-top: 50px;
+		width: 100%;
+		height: 450px;
+	}
 	h1 {
 		padding-top: 40px;
 		font-weight: 700;
@@ -551,9 +575,16 @@ section#contact {
 		padding-top: 50px;
 		.contact-info-text {
 			text-align: left;
+			div:nth-child(1) {
+				margin-bottom: -20px;
+				display: flex;
+				div {
+					margin-left: -15px;
+				}
+			}
 			div {
 				padding: 13px;
-				font-size: 19px;
+				font-size: 17px;
 				svg {
 					margin: 10px 10px 0 10px;
 					color: $green;
@@ -562,10 +593,68 @@ section#contact {
 			}
 		}
 		.contact-info-input {
-			
+			margin-top: 20px;
+			text-align: center;
+			.button-send {
+				float: left;
+				color: $green;
+				border: 2px solid $green;
+				padding: 2px 10px;
+				border-radius: 5px;
+				transition: all 250ms ease-in-out;
+				&:hover {
+					background-color: $green;
+					color: white;
+					cursor: pointer;
+				}
+			}
+			div input, div textarea {
+				width: 100%;
+				margin: 6px 0;
+				padding: 5px;
+			}
 		}
 	}
 }
+
+section#team {
+	padding-top: 100px;
+	text-align: center;
+	h1 {
+		padding-top: 40px;
+		font-weight: 700;
+		font-size: 33px;
+	}
+	p {
+		color: grey;
+		padding-bottom: 40px;
+	}
+	.team-box {
+		padding-bottom: 30px;
+		img {
+			width: 100%;
+			height: auto;
+		}
+		h2 {
+			font-size: 20px;
+			padding-top: 10px;
+			margin-bottom: 0;
+		}
+		p {
+			margin: 0;
+			padding: 0;
+			font-size: 14px;
+		}
+		.team-media {
+			font-size: 20px;
+			svg {
+				margin: 0 3px;
+			}
+		}
+	}
+}
+
+
 footer {
 	text-align: center;
 	min-height: 100px;

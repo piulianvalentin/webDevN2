@@ -12,57 +12,58 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
     <script src="js/wow.min.js"></script>
     <script>
-       new WOW().init();
-   </script>
+     new WOW().init();
+ </script>
 </head>
 
 <body>
-    <div id="overlay"></div>
-    <header>
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="images/logo.png" alt="logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </button>
-                <div class="navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                      <li class="nav-item active">
-                        <a class="nav-link" href="#">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">ABOUT</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">SERVICES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">PORTOFOLIO</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">TEAM</a>
-                    </li>
-                    <li class="nav-item dropdown-home">
-                        <a class="nav-link" href="#">DROP DOWN<i class="fas fa-angle-down" style="margin-left: 4px;font-size: 15px;margin-bottom: -2px;"></i></a>
-                        <ul class="dropdown-menu1">
-                            <li class="text-left"><a href="#">DROPDOWN 1</a></li>
-                            <li class="text-left"><a href="#">DROPDOWN 2</a></li>
-                            <li class="text-left"><a href="#">DROPDOWN 3</a></li>
-                            <li class="text-left"><a href="#">DROPDOWN 4</a></li>
-                            <li><a href="#">DROPDOWN 5</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">CONTACT US</a>
-                    </li>
-                </ul>
-            </div>
-        </div>               
-    </nav>
+  <div id="home-button"><i class="fas fa-angle-up"></i></div>
+  <div id="overlay"></div>
+  <header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+            <div class="navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#home">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">SERVICES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#portofolio">PORTOFOLIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#team">TEAM</a>
+                </li>
+                <li class="nav-item dropdown-home">
+                    <a class="nav-link" href="">DROP DOWN<i class="fas fa-angle-down" style="margin-left: 4px;font-size: 15px;margin-bottom: -2px;"></i></a>
+                    <ul class="dropdown-menu1">
+                        <li class="text-left"><a href="#">DROPDOWN 1</a></li>
+                        <li class="text-left"><a href="#">DROPDOWN 2</a></li>
+                        <li class="text-left"><a href="#">DROPDOWN 3</a></li>
+                        <li class="text-left"><a href="#">DROPDOWN 4</a></li>
+                        <li><a href="#">DROPDOWN 5</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">CONTACT US</a>
+                </li>
+            </ul>
+        </div>
+    </div>               
+</nav>
 </header>
 
 <section id="home">
@@ -82,10 +83,10 @@
 <section id="about">
     <div class="container">
         <div class="row">
-         <div class="about-image col-lg-6 order-lg-1 wow animated fadeInRight" style="">
-             <img src="./images/about1.jpg" alt="">
-         </div>
-         <div class="about-text col-lg-6">
+           <div class="about-image col-lg-6 order-lg-1 wow animated fadeInRight" style="">
+               <img src="./images/about1.jpg" alt="">
+           </div>
+           <div class="about-text col-lg-6">
             <h1>Few Words About Us</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere consequuntur commodi explicabo eos illum blanditiis a, distinctio quibusdam culpa. Fugiat doloremque ab rerum, facere ipsa maiores incidunt. Impedit, hic! Quasi?</p>
             <ul class="about-list">
@@ -212,7 +213,7 @@
 
 <section id="portofolio">   
     <div class="container"> 
-        <h1>PORTOFOLIO</h1>
+        <h1 class="wow fadeIn animated">PORTOFOLIO</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure ut nostrum velit, facere fuga.</p>
         <ul class="portofolio-button-list">
             <li class="portofolio-button"><a href="#">ALL</a></li>
@@ -222,7 +223,7 @@
             <li class="portofolio-button"><a href="#">WEB</a></li>
         </ul>
         <div class="row">
-            <div class="portofolio-box-container col-lg-3 col-md-4 col-sm-6 text-center">
+            <div class="portofolio-box-container col-lg-3 col-md-4 col-sm-6 wow animated fadeInUp">
                 <div class="portofolio-box-1 text-center">
                     <img src="images/app1.jpg" alt="">
                     <div class="portofolio-box-text align-text-bottom">
@@ -231,7 +232,7 @@
                     </div>
                 </div>
             </div>
-            <div class="portofolio-box-container col-lg-3 col-md-4 col-sm-6 ">
+            <div class="portofolio-box-container col-lg-3 col-md-4 col-sm-6 wow animated fadeInUp">
                 <div class="portofolio-box-1">
                     <img src="images/app1.jpg" alt="">
                     <div class="portofolio-box-text">
@@ -240,7 +241,7 @@
                     </div>
                 </div>
             </div>
-            <div class="portofolio-box-container col-lg-3 col-md-4 col-sm-6 ">
+            <div class="portofolio-box-container col-lg-3 col-md-4 col-sm-6 wow animated fadeInUp">
                 <div class="portofolio-box-1">
                     <img src="images/app1.jpg" alt="">
                     <div class="portofolio-box-text">
@@ -249,7 +250,7 @@
                     </div>
                 </div>
             </div>
-            <div class="portofolio-box-container col-lg-3 col-md-4 col-sm-6 ">
+            <div class="portofolio-box-container col-lg-3 col-md-4 col-sm-6 wow animated fadeInUp">
                 <div class="portofolio-box-1">
                     <img src="images/app1.jpg" alt="">
                     <div class="portofolio-box-text">
@@ -258,7 +259,7 @@
                     </div>
                 </div>
             </div>
-            <div class="portofolio-box-container col-lg-3 col-md-4 col-sm-6 ">
+            <div class="portofolio-box-container col-lg-3 col-md-4 col-sm-6 wow animated fadeInUp">
                 <div class="portofolio-box-1">
                     <img src="images/app1.jpg" alt="">
                     <div class="portofolio-box-text">
@@ -267,7 +268,7 @@
                     </div>
                 </div>
             </div>
-            <div class="portofolio-box-container col-lg-3 col-md-4 col-sm-6 ">
+            <div class="portofolio-box-container col-lg-3 col-md-4 col-sm-6 wow animated fadeInUp">
                 <div class="portofolio-box-1">
                     <img src="images/app1.jpg" alt="">
                     <div class="portofolio-box-text">
@@ -276,7 +277,7 @@
                     </div>
                 </div>
             </div>
-            <div class="portofolio-box-container col-lg-3 col-md-4 col-sm-6 ">
+            <div class="portofolio-box-container col-lg-3 col-md-4 col-sm-6 wow animated fadeInUp">
                 <div class="portofolio-box-1">
                     <img src="images/app1.jpg" alt="">
                     <div class="portofolio-box-text">
@@ -285,7 +286,7 @@
                     </div>
                 </div>
             </div>
-            <div class="portofolio-box-container col-lg-3 col-md-4 col-sm-6 ">
+            <div class="portofolio-box-container col-lg-3 col-md-4 col-sm-6 wow animated fadeInUp">
                 <div class="portofolio-box-1">
                     <img src="images/app1.jpg" alt="">
                     <div class="portofolio-box-text">
@@ -294,7 +295,7 @@
                     </div>
                 </div>
             </div>
-            <div class="portofolio-box-container col-lg-3 col-md-4 col-sm-6 ">
+            <div class="portofolio-box-container col-lg-3 col-md-4 col-sm-6 wow animated fadeInUp">
                 <div class="portofolio-box-1">
                     <img src="images/app1.jpg" alt="">
                     <div class="portofolio-box-text">
@@ -303,7 +304,7 @@
                     </div>
                 </div>
             </div>
-            <div class="portofolio-box-container col-lg-3 col-md-4 col-sm-6 ">
+            <div class="portofolio-box-container col-lg-3 col-md-4 col-sm-6 wow animated fadeInUp">
                 <div class="portofolio-box-1">
                     <img src="images/app1.jpg" alt="">
                     <div class="portofolio-box-text">
@@ -312,7 +313,7 @@
                     </div>
                 </div>
             </div>
-            <div class="portofolio-box-container col-lg-3 col-md-4 col-sm-6 ">
+            <div class="portofolio-box-container col-lg-3 col-md-4 col-sm-6 wow animated fadeInUp">
                 <div class="portofolio-box-1">
                     <img src="images/app1.jpg" alt="">
                     <div class="portofolio-box-text">
@@ -321,7 +322,7 @@
                     </div>
                 </div>
             </div>
-            <div class="portofolio-box-container col-lg-3 col-md-4 col-sm-6 ">
+            <div class="portofolio-box-container col-lg-3 col-md-4 col-sm-6 wow animated fadeInUp">
                 <div class="portofolio-box-1">
                     <img src="images/app1.jpg" alt="">
                     <div class="portofolio-box-text">
@@ -336,34 +337,83 @@
     </div>
 </section>
 
+<section id="team">
+    <div class="container">
+       <h1 wow animated fadeIn>TEAM</h1>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, totam!</p>
+       <div class="row">
+        <div class="team-box col-lg-3 col-sm-6 wow animated fadeIn">
+            <img src="images/team-1.jpg" alt="">
+            <h2>Walter White</h2>
+            <p>Chief Executive Office</p>
+            <div class="team-media">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter-square"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-github-square"></i>
+            </div>
+        </div>
+        <div class="team-box col-lg-3 col-sm-6 wow animated fadeIn">
+            <img src="images/team-1.jpg" alt="">
+            <h2>Walter White</h2>
+            <p>Chief Executive Office</p>
+            <div class="team-media">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter-square"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-github-square"></i>
+            </div>
+        </div>
+        <div class="team-box col-lg-3 col-sm-6 wow animated fadeIn">
+            <img src="images/team-1.jpg" alt="">
+            <h2>Walter White</h2>
+            <p>Chief Executive Office</p>
+            <div class="team-media">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter-square"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-github-square"></i>
+            </div>
+        </div>
+        <div class="team-box col-lg-3 col-sm-6 wow animated fadeIn">
+            <img src="images/team-1.jpg" alt="">
+            <h2>Walter White</h2>
+            <p>Chief Executive Office</p>
+            <div class="team-media">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter-square"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-github-square"></i>
+            </div>
+        </div>
+    </div>    
+</div>  
+</section>
+
+
 <section id="contact">
     <div class="container">
-        <h1>CONTACT</h1>
+        <h1 class="wow animated fadeIn">CONTACT</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, hic!</p>
     </div>
     <div id="map"></div>
     <div class="container">
         <div class="contact-info row">
-            <div class="contact-info-text col-sm-5">
-                <div class="adress">A108 Adam Street
-New York, NY 535022</div>
+            <div class="contact-info-text col-md-5 col-sm-12 wow animated fadeInLeft">
+                <div class="adress"><i class="fas fa-home"></i><div>A108 Adam Street
+                New York, NY 535022</div></div>
                 <div class="email"><i class="far fa-envelope"></i>info@example.com</div>
                 <div class="phone"><i class="fas fa-mobile-alt"></i>+1 34534 3453 455</div>
             </div>
-            <div class="contact-info-input col-sm-7">
+            <div class="contact-info-input col-md-7 col-sm-12 wow animated fadeInRight">
                 <div id="name"><input type="text" placeholder="Your Name"></div>
                 <div id="email"><input type="text" placeholder="Your Email"></div>
                 <div id="subject"><input type="text" placeholder="Subject"></div>
-                <div id="message"><textarea name="" id="" cols="30" rows="10"></textarea></div>   
+                <div id="message"><textarea name="" id="" cols="30" rows="5" placeholder="Message"></textarea></div>
+                <div class="button-send">SEND</div>   
             </div>
         </div>
     </div>
-    
-    
-
-
-
-
 </section>
 
 <footer>
@@ -371,9 +421,10 @@ New York, NY 535022</div>
     <p>Bootstrap Templates by <span>BootstrapMade</span></p>
 </footer>
 <!-- Wow -->
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdkHQ5_8JQeOwSFFbN6feOiRgd2Btal6U&callback=initMap"
+async defer></script>
 <script src="js/jquery.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
 <script src="js/jquery.counterup.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
